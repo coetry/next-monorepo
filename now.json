@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "next-monorepo",
+  "builds": [
+    {"src": "api/**/*.js", "use": "@now/node" },
+    {"src": "www/package.json", "use": "@now/next"}
+  ],
+  "routes": [
+    {"src": "/api/(.*)", "dest": "api/$1"},
+    {"src": "/(.*)", "dest": "www/$1"}
+  ]
+}
